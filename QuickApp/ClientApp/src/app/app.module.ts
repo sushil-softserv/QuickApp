@@ -64,6 +64,9 @@ import { UsersManagementComponent } from './components/controls/users-management
 import { RolesManagementComponent } from './components/controls/roles-management.component';
 import { RoleEditorComponent } from './components/controls/role-editor.component';
 
+import { ProductService } from './services/product.service';
+import { ProductEndpoint } from './services/product-endpoint.service';
+
 
 @NgModule({
   declarations: [
@@ -122,7 +125,9 @@ import { RoleEditorComponent } from './components/controls/role-editor.component
     AccountService,
     AccountEndpoint,
     LocalStoreManager,
-    OidcHelperService
+    OidcHelperService,
+    ProductService,
+    ProductEndpoint
   ],
   bootstrap: [AppComponent]
 })

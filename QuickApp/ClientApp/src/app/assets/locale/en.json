@@ -240,6 +240,7 @@
     "ReloadPreferencesHint": "Load default preferences (local changes are discarded)",
     "Language": "Language:",
     "Default": "Default",
+	"Hindi": "Hindi",
     "English": "English",
     "French": "French",
     "German": "German",
@@ -376,5 +377,28 @@
       "Important": "Mark as important",
       "AddTask": "Add Task"
     }
-  }
+  },
+  "products": {
+	  "management": {
+		  "Search": "Search for products...",
+		  "AddProduct": "Add Product",
+		  "Delete": "Delete product",
+		  "Active": "Active",
+      	  "Product": "Product",
+          "Description": "Description",
+		  "ProductName": "Name",
+		  "ProductDescription": "Description",
+		  "BuyingPrice": "Buying Price",
+		  "SellingPrice": "Selling Price",
+		  "UnitsInStock": "Units In Stock"
+	  },
+    "editor": {
+      "NewProduct": "New Product",
+      "Name": "Name",
+      "ProductNameRequired": "Product name is required",
+      "Description": "Description",
+      "Important": "Mark as important",
+      "AddProduct": "Add Product"
+    }
+}
 }
