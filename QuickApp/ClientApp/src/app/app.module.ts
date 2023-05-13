@@ -66,6 +66,8 @@ import { RoleEditorComponent } from './components/controls/role-editor.component
 
 import { ProductService } from './services/product.service';
 import { ProductEndpoint } from './services/product-endpoint.service';
+import { CustomerService } from './services/customer.service';
+import { CustomerEndpoint } from './services/customer-endpoint.service';
 
 
 @NgModule({
@@ -127,7 +129,9 @@ import { ProductEndpoint } from './services/product-endpoint.service';
     LocalStoreManager,
     OidcHelperService,
     ProductService,
-    ProductEndpoint
+    ProductEndpoint,
+    CustomerService,
+    CustomerEndpoint
   ],
   bootstrap: [AppComponent]
 })

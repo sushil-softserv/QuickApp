@@ -28,13 +28,15 @@ namespace DAL.Repositories
         }
 
 
-        public IEnumerable<Customer> GetAllCustomersData()
+        public IEnumerable<Customer> GetAllCustomersData(int page, int pageSize)
         {
             return _appContext.Customers
                 .Include(c => c.Orders).ThenInclude(o => o.OrderDetails).ThenInclude(d => d.Product)
                 .Include(c => c.Orders).ThenInclude(o => o.Cashier)
                 .AsSingleQuery()
                 .OrderBy(c => c.Name)
+                .Skip(page * pageSize)
+                .Take(pageSize)
                 .ToList();
         }
 

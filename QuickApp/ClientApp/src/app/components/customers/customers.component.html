@@ -3,6 +3,39 @@
 </header>
 
 <div [@fadeInOut]>
-  <!---- Sample Page Content ---->
-  <app-todo-demo verticalScrollbar="true"></app-todo-demo>
+  <!---- Sample Page Content 
+  <app-todo-demo verticalScrollbar="true"></app-todo-demo>---->
+  <div class="row control-box">
+    <div class="col-lg-8">
+      <div class="search-box">
+        <app-search-box (searchChange)="onSearchChanged($event)" placeholder="{{'customers.management.Search' | translate}}"></app-search-box>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <ul class="nav flex-row">
+        <!-- <li [class.active]="hideCompletedproducts" class="nav-item toolbaritem">
+          <a class="nav-link" href="javascript:;" (click)="hideCompletedproducts = !hideCompletedproducts"><i class="fa fa-eye-slash"></i> {{'todoDemo.management.HideCompleted' | translate}}</a>
+        </li> -->
+        <li class="nav-item toolbaritem" style="margin-left: 210px;">
+          <a class="nav-link" href="javascript:;" (click)="null"><i class="fa fa-plus"></i> {{'products.management.AddProduct' | translate}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <ngx-datatable class="material colored-header sm table-hover"
+                 [loadingIndicator]="loadingIndicator"
+                 [rows]="rows"
+                 [rowHeight]="35"
+                 [headerHeight]="37"
+                 [footerHeight]="35"
+                 [columns]="columns"
+                 [scrollbarV]="verticalScrollbar"
+                 [columnMode]="'force'"
+                 [externalPaging]="true"
+                 [count]="page.totalRecords"
+                 [offset]="page.pageNumber"
+                 [limit]="page.pageSize"
+                 (page)="setPage($event)">
+  </ngx-datatable>
 </div>

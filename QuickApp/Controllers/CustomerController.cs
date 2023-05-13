@@ -15,9 +15,11 @@ using QuickApp.ViewModels;
 using AutoMapper;
 using Microsoft.Extensions.Logging;
 using QuickApp.Helpers;
+using Microsoft.AspNetCore.Authorization;
 
 namespace QuickApp.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     public class CustomerController : ControllerBase
     {
@@ -38,10 +40,11 @@ namespace QuickApp.Controllers
 
 
         // GET: api/values
-        [HttpGet]
-        public IActionResult Get()
+        [HttpGet("{pageNumber:int}/{pageSize:int}")]
+        [ProducesResponseType(200, Type = typeof(IEnumerable<CustomerViewModel>))]
+        public IActionResult Get(int pageNumber, int pageSize)
         {
-            var allCustomers = _unitOfWork.Customers.GetAllCustomersData();
+            var allCustomers = _unitOfWork.Customers.GetAllCustomersData(pageNumber, pageSize);
             return Ok(_mapper.Map<IEnumerable<CustomerViewModel>>(allCustomers));
         }
 

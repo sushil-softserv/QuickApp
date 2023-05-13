@@ -399,6 +399,17 @@
       "Description": "Description",
       "Important": "Mark as important",
       "AddProduct": "Add Product"
-    }
-}
+		}
+	},
+	"customers": {
+		"management":{
+			"Search": "Search for customers...",
+			"CustomerName": "Name",
+			"CustomerEmail": "Email",
+			"CustomerPhone": "Phone",
+			"CustomerAddress": "Address",
+			"CustomerCity": "City",
+			"CustomerGender": "Gender"
+		}
+	}
 }
